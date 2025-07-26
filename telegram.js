@@ -32,6 +32,10 @@ function setTelegramMessage(payloadWrapper) {
       const date = new Date(value);
       value = date.toLocaleDateString("it-IT");
       message += `• ${key}: ${value} \n`;
+    } else if (key === "Name") {
+      for (let [keyIn, valIn] of Object.entries(value)) {
+        message += `• ${keyIn}: ${valIn} \n`;
+      }
     } else {
       message += `• ${key}: ${value} \n`;
     }
